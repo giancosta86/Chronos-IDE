@@ -1,0 +1,49 @@
+/*
+ *   This CSS stems from a syntax highlighting example provided by RichTextFX
+ */
+.code-area {
+    -fx-font-size: 13.5pt;
+}
+
+
+.comment {
+	-fx-fill: cadetblue;
+}
+
+
+.string {
+    -fx-fill: green;
+}
+
+
+.number {
+    -fx-fill: orange;
+}
+
+
+.paren {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+
+.brace {
+    -fx-fill: teal;
+    -fx-font-weight: bold;
+}
+
+
+
+.semicolon {
+}
+
+
+.keyword {
+     -fx-fill: #004ece;
+    -fx-font-weight: bold;
+}
+
+
+.function {
+    -fx-fill: cyan;
+    -fx-fill: firebrick;
+}

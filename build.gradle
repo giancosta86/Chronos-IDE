@@ -1,0 +1,120 @@
+/*§
+  ===========================================================================
+  Chronos IDE
+  ===========================================================================
+  Copyright (C) 2015 Gianluca Costa
+  ===========================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  ===========================================================================
+*/
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://dl.bintray.com/giancosta86/Hephaestus'
+        }
+
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.1'
+        classpath 'info.gianlucacosta.aurora:aurora:2.1'
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:3.1'
+    }
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+apply plugin: 'java'
+apply plugin: 'info.gianlucacosta.aurora'
+apply plugin: 'application'
+
+
+group 'info.gianlucacosta.chronos'
+archivesBaseName = 'chronos-ide'
+version '1.0'
+
+description = "Integrated development environment for the Chronos programming language"
+
+ext.facebookPage = "https://www.facebook.com/chronos.language"
+
+sourceCompatibility = 1.8
+
+mainClassName = 'info.gianlucacosta.chronos.ide.App'
+
+
+dependencies {
+    compile 'info.gianlucacosta.omnieditor:omnieditor:1.0'
+    compile 'info.gianlucacosta.chronos:chronos:1.0'
+
+    compile 'org.scalafx:scalafx_2.11:8.0.40-R8'
+}
+
+
+
+aurora {
+    docTask = 'javadoc'
+    gitHubUser = 'giancosta86'
+
+    author {
+        name = 'Gianluca Costa'
+        email = 'gianluca@gianlucacosta.info'
+        url = 'http://gianlucacosta.info/'
+    }
+
+    bintray {
+        user = project.bintrayUser
+        key = project.bintrayKey
+        repo = 'Hephaestus'
+        licenses = ['Apache-2.0']
+        labels = [
+                'Chronos',
+                'language',
+                'IDE',
+                'Integrated Development Environment',
+                'DES',
+                'GUI',
+                'discrete event simulation',
+                'editor',
+                'JavaFX',
+                'Java'
+        ]
+    }
+}
+
+
+moonLicense {
+    license = apache2
+
+    productInfo {
+        productName = 'Chronos IDE'
+        inceptionYear = 2015
+        copyrightHolder = 'Gianluca Costa'
+    }
+}
+
+
+processResources {
+    filesMatching('**/App.properties.xml') {
+        filter ReplaceTokens, tokens: [
+                'name'          : project.moonLicense.productInfo.productName,
+                'version'       : project.version,
+                'copyrightYears': project.moonLicense.getCopyrightYears(),
+                'license'       : project.moonLicense.license.name,
+                'url'           : project.url.toString(),
+                'facebookPage'  : project.facebookPage,
+                'release'       : project.auroraSettings.release.toString()
+        ]
+    }
+}

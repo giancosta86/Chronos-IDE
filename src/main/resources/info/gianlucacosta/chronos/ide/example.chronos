@@ -1,0 +1,17 @@
+event start {
+    readInt "Please, input X: " x;
+    readInt "Please, input Y: " y;
+
+    create result;
+
+    call sum(x, y, result);
+
+    println "The result is: " + value(result);
+
+    destroy result;
+}
+
+
+procedure sum(left, right, res) {
+    value(res) := left + right;
+}
