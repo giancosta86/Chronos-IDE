@@ -44,9 +44,6 @@ class AboutBox extends Alert {
         }
 
         getDialogPane().setContent(contentPane);
-        //getDialogPane().setPadding(new Insets(0));
-        //contentPane.setPadding(new Insets(0));
-
 
         ButtonType okButton = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         getDialogPane().getButtonTypes().addAll(okButton);
