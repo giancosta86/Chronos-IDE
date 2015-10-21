@@ -22,6 +22,8 @@ package info.gianlucacosta.chronos.ide;
 
 import info.gianlucacosta.omnieditor.OmniEditor;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -33,15 +35,37 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.getIcons().setAll(
-                new Image(getClass().getResourceAsStream("icons/mainIcon16.png")),
-                new Image(getClass().getResourceAsStream("icons/mainIcon32.png")),
-                new Image(getClass().getResourceAsStream("icons/mainIcon64.png")),
-                new Image(getClass().getResourceAsStream("icons/mainIcon128.png"))
-        );
+        final SplashStage splashStage = new SplashStage();
+        splashStage.show();
 
-        OmniEditor omniEditor = new OmniEditor(new IdeStrategy());
 
-        omniEditor.start(primaryStage);
+        Task<Void> initTask = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                try {
+                    primaryStage.getIcons().setAll(
+                            new Image(getClass().getResourceAsStream("icons/mainIcon16.png")),
+                            new Image(getClass().getResourceAsStream("icons/mainIcon32.png")),
+                            new Image(getClass().getResourceAsStream("icons/mainIcon64.png")),
+                            new Image(getClass().getResourceAsStream("icons/mainIcon128.png"))
+                    );
+
+                    OmniEditor omniEditor = new OmniEditor(new IdeStrategy());
+
+                    omniEditor.start(primaryStage);
+
+                    Platform.runLater(() -> {
+                        splashStage.close();
+                    });
+                }catch (Exception ex) {
+                        System.err.println(ex);
+                        throw ex;
+                    }
+
+                return null;
+            }
+        };
+
+        new Thread(initTask).start();
     }
 }

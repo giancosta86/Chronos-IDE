@@ -43,7 +43,7 @@ apply plugin: 'application'
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '1.0'
+version '1.5'
 
 description = "Integrated development environment for the Chronos programming language"
 
@@ -55,10 +55,8 @@ mainClassName = 'info.gianlucacosta.chronos.ide.App'
 
 
 dependencies {
-    compile 'info.gianlucacosta.omnieditor:omnieditor:1.0'
-    compile 'info.gianlucacosta.chronos:chronos:1.0'
-
-    compile 'org.scalafx:scalafx_2.11:8.0.40-R8'
+    compile 'info.gianlucacosta.omnieditor:omnieditor:2.0'
+    compile 'info.gianlucacosta.chronos:chronos:2.0'
 }
 
 
@@ -117,4 +115,15 @@ processResources {
                 'release'       : project.auroraSettings.release.toString()
         ]
     }
+}
+
+
+startScripts {
+    def originalWindowsTemplateString = windowsStartScriptGenerator.template.asString()
+    def javawTemplateString =
+            originalWindowsTemplateString
+                    .replace("java.exe", "javaw.exe")
+                    .replace("\"%JAVA_EXE%\" %DEFAULT_JVM_OPTS%", "start \"\" /B \"%JAVA_EXE%\" %DEFAULT_JVM_OPTS%")
+    def javawTemplate = project.resources.text.fromString(javawTemplateString)
+    windowsStartScriptGenerator.template = javawTemplate
 }

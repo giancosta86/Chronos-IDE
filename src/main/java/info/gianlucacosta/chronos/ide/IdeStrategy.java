@@ -50,11 +50,6 @@ class IdeStrategy implements AppStrategy {
 
 
     @Override
-    public Pair<Double, Double> getInitialMainWindowSize() {
-        return new Pair<>(800.0, 600.0);
-    }
-
-    @Override
     public FileChooser createSourceFileChooser() {
         FileChooser fileChooser = new FileChooser();
 
