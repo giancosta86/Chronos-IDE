@@ -30,7 +30,7 @@ class StylePatterns {
     private static final String commentPattern = "//[^\n]*" + "|" + "(?s)/\\*.*?(\\*/|\\Z)";
     private static final String stringPattern = "\"[^\"\\n]*\"?";
 
-    private static final String numberPattern = "\\b(\\+|-)?(0|[1-9][0-9]*)(.[0-9]+)?\\b|(\\+|-)?inf|time\\.v";
+    private static final String numberPattern = "\\b(\\+|-)?(0|[1-9][0-9]*)(.[0-9]+)?\\b|(\\+|-)?inf|now|time\\.v";
     private static final String parenthesesPattern = "[()]";
     private static final String bracesPattern = "[{}]";
     private static final String semicolonPattern = ";";
@@ -46,7 +46,7 @@ class StylePatterns {
             "map",
             "event",
             "procedure",
-            "$disableHeapCheck",
+            "disableHeapCheck",
             "create",
             "called",
             "destroy",
@@ -74,10 +74,6 @@ class StylePatterns {
             "from",
             "print",
             "println",
-            "readDouble",
-            "readInt",
-            "readBool",
-            "readString",
             "true",
             "false",
             "setRandomSeed"
@@ -93,6 +89,10 @@ class StylePatterns {
             "toInt",
             "toBool",
             "toString",
+            "readDouble",
+            "readInt",
+            "readBool",
+            "readString",
             "floor",
             "ceil"
     };
