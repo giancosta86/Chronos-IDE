@@ -43,7 +43,7 @@ apply plugin: 'application'
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '1.5'
+version '2.0'
 
 description = "Integrated development environment for the Chronos programming language"
 
