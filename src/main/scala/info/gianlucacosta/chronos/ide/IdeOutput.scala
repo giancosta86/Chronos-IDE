@@ -18,32 +18,24 @@
   ===========================================================================
 */
 
-package info.gianlucacosta.chronos.ide;
+package info.gianlucacosta.chronos.ide
 
-import info.gianlucacosta.chronos.interpreter.Output;
-import info.gianlucacosta.chronos.interpreter.atoms.Atom;
-import info.gianlucacosta.omnieditor.AtomicStringBuffer;
+import info.gianlucacosta.chronos.interpreter.Output
+import info.gianlucacosta.chronos.interpreter.atoms.Atom
+import info.gianlucacosta.omnieditor.AtomicStringBuffer
 
-class IdeOutput implements Output {
-    private final AtomicStringBuffer outputBuffer;
 
-    public IdeOutput(AtomicStringBuffer outputBuffer) {
-        this.outputBuffer = outputBuffer;
-    }
+class IdeOutput(outputBuffer: AtomicStringBuffer) extends Output {
+  override def print(atom: Atom): Unit = {
+    outputBuffer.print(atom.toString)
+  }
 
-    @Override
-    public void print(Atom atom) {
-        outputBuffer.print(atom.toString());
-    }
+  override def println(atom: Atom): Unit = {
+    outputBuffer.println(atom.toString)
+  }
 
-    @Override
-    public void println(Atom atom) {
-        outputBuffer.println(atom.toString());
-    }
-
-    @Override
-    public void printException(Exception exception) {
-        outputBuffer.println("** ERROR **");
-        outputBuffer.println(exception.getMessage());
-    }
+  override def printException(exception: Exception): Unit = {
+    outputBuffer.println("** ERROR **")
+    outputBuffer.println(exception.getMessage)
+  }
 }

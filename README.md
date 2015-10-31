@@ -7,6 +7,9 @@
 *Chronos IDE* is a user-friendly IDE (integrated development environment) for the [Chronos programming language](https://github.com/giancosta86/Chronos).
 
 
+![Screenshot](Screenshot.png)
+
+
 ## Requirements
 
 Chronos IDE requires Java 8 update 51 or later compatible version.

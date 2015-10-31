@@ -36,7 +36,7 @@ buildscript {
 
 import org.apache.tools.ant.filters.ReplaceTokens
 
-apply plugin: 'java'
+apply plugin: 'scala'
 apply plugin: 'info.gianlucacosta.aurora'
 apply plugin: 'application'
 
@@ -55,14 +55,15 @@ mainClassName = 'info.gianlucacosta.chronos.ide.App'
 
 
 dependencies {
-    compile 'info.gianlucacosta.omnieditor:omnieditor:2.0'
-    compile 'info.gianlucacosta.chronos:chronos:2.0'
+    compile 'info.gianlucacosta.omnieditor:omnieditor:2.1'
+    compile 'info.gianlucacosta.chronos:chronos:2.1'
+    compile 'org.scalafx:scalafx_2.11:8.0.60-R9'
 }
 
 
 
 aurora {
-    docTask = 'javadoc'
+    docTask = 'scaladoc'
     gitHubUser = 'giancosta86'
 
     author {

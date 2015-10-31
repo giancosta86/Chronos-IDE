@@ -18,34 +18,41 @@
   ===========================================================================
 */
 
-package info.gianlucacosta.chronos.ide;
+package info.gianlucacosta.chronos.ide
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.layout.Pane;
 
-import java.io.IOException;
+import javafx.stage.Stage
 
-class AboutBox extends Alert {
-    public AboutBox() {
-        super(AlertType.NONE);
+import info.gianlucacosta.omnieditor.OmniEditor
 
-        setTitle(String.format("About %s...", IdeInfo.getInstance().name()));
+import scalafx.application.Platform
+import scalafx.scene.image.Image
 
-        FXMLLoader loader = new FXMLLoader(AboutBox.class.getResource("AboutBox.fxml"));
 
-        Pane contentPane;
-        try {
-            contentPane = loader.load();
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
+class StartupThread(primaryStage: Stage) extends Thread {
 
-        getDialogPane().setContent(contentPane);
+  override def run(): Unit = {
+    var splashStage: SplashStage = null
 
-        ButtonType okButton = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-        getDialogPane().getButtonTypes().addAll(okButton);
+    Platform.runLater {
+      splashStage = new SplashStage()
+      splashStage.show()
+
+      primaryStage.getIcons.setAll(
+        new Image(getClass.getResourceAsStream("icons/mainIcon16.png")),
+        new Image(getClass.getResourceAsStream("icons/mainIcon32.png")),
+        new Image(getClass.getResourceAsStream("icons/mainIcon64.png")),
+        new Image(getClass.getResourceAsStream("icons/mainIcon128.png"))
+      )
     }
+
+
+    val omniEditor = new OmniEditor(new IdeStrategy)
+    omniEditor.start(primaryStage)
+
+    Platform.runLater {
+      primaryStage.centerOnScreen()
+      splashStage.close()
+    }
+  }
 }

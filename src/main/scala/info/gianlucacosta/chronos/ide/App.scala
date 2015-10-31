@@ -18,18 +18,20 @@
   ===========================================================================
 */
 
-package info.gianlucacosta.chronos.ide;
+package info.gianlucacosta.chronos.ide
 
-import info.gianlucacosta.chronos.util.CommonXmlProperties;
+import javafx.application.Application
+import javafx.stage.Stage
 
-class IdeInfo extends CommonXmlProperties {
-    private static IdeInfo instance = new IdeInfo();
+object App {
+  def main(args: Array[String]): Unit = {
+    Application.launch(classOf[App], args: _*)
+  }
+}
 
-    public static IdeInfo getInstance() {
-        return instance;
-    }
-
-    private IdeInfo() {
-        super(App.class.getResourceAsStream("App.properties.xml"));
-    }
+class App extends Application {
+  override def start(primaryStage: Stage): Unit = {
+    val startupThread = new StartupThread(primaryStage)
+    startupThread.start()
+  }
 }

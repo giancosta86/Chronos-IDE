@@ -18,30 +18,26 @@
   ===========================================================================
 */
 
-package info.gianlucacosta.chronos.ide;
+package info.gianlucacosta.chronos.ide
 
-import java.awt.*;
-import java.net.URI;
+import javafx.fxml.FXMLLoader
+import javafx.scene.layout.Pane
 
-public class DesktopUtils {
-    private DesktopUtils() {
-    }
+import scalafx.scene.control.Alert.AlertType
+import scalafx.scene.control.{Alert, ButtonBar, ButtonType}
 
-    public static void openBrowser(String url) {
-        Thread browserThread = new Thread(() -> {
-            Desktop desktop = Desktop.getDesktop();
 
-            if (desktop == null) {
-                throw new UnsupportedOperationException();
-            }
+class AboutBox extends Alert(AlertType.None) {
+  title = s"About ${IdeInfo.name}..."
 
-            try {
-                desktop.browse(new URI(url));
-            } catch (Exception ex) {
-                throw new UnsupportedOperationException(ex);
-            }
-        });
-        browserThread.start();
-    }
+  dialogPane().setContent({
+    val loader = new FXMLLoader(App.getClass.getResource("AboutBox.fxml"))
 
+    loader.load[Pane]
+  })
+
+
+  buttonTypes = Seq(
+    new ButtonType("OK", ButtonBar.ButtonData.OKDone)
+  )
 }
