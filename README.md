@@ -17,6 +17,8 @@ Chronos IDE requires Java 8 update 51 or later compatible version.
 
 ## Download and run
 
+The easier, suggested way to execute Chronos IDE is via [MoonDeploy](https://github.com/giancosta86/moondeploy): just go to the [download area](https://github.com/giancosta86/Chronos-IDE/releases/latest) and open *App.moondeploy* to automatically download and execute the application.
+
 The latest binary package can be downloaded [from GitHub](https://github.com/giancosta86/Chronos-IDE/releases/latest).
 
 The executable program - for both Unix and Windows - is in the *bin* subdirectory.
