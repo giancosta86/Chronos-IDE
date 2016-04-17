@@ -1,0 +1,6 @@
+{
+  "name": "Chronos IDE",
+  "tagline": "Integrated development environment for the Chronos programming language",
+  "body": "# Chronos IDE\r\n\r\n*Integrated development environment for the Chronos programming language*\r\n\r\n## Introduction\r\n\r\n*Chronos IDE* is a user-friendly IDE (integrated development environment) for the [Chronos programming language](https://github.com/giancosta86/Chronos).\r\n\r\n\r\n## Requirements\r\n\r\nChronos IDE requires Java 8 update 51 or later compatible version.\r\n\r\nThe suggested way to execute Chronos IDE is via [MoonDeploy](http://gianlucacosta.info/moondeploy).",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
