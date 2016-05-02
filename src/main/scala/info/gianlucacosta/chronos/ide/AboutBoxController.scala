@@ -23,7 +23,8 @@ package info.gianlucacosta.chronos.ide
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 
-import info.gianlucacosta.chronos.Language
+import info.gianlucacosta.chronos.{ArtifactInfo => Language}
+import info.gianlucacosta.chronos.chronos_ide.{ArtifactInfo => IdeInfo}
 
 
 class AboutBoxController {

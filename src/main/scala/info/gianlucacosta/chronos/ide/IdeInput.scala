@@ -30,6 +30,8 @@ import info.gianlucacosta.chronos.interpreter.io.BasicInput
 import scalafx.application.Platform
 import scalafx.scene.control.{Alert, ButtonBar, ButtonType, TextInputDialog}
 
+import info.gianlucacosta.chronos.chronos_ide.{ArtifactInfo => IdeInfo}
+
 
 class IdeInput extends BasicInput {
 

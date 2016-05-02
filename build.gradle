@@ -28,22 +28,23 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.1'
-        classpath 'info.gianlucacosta.aurora:aurora:2.1'
-        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:3.1'
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.1'
+        classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.2'
+        classpath 'info.gianlucacosta.aurora:aurora:4.3'
     }
 }
 
-import org.apache.tools.ant.filters.ReplaceTokens
 
 apply plugin: 'scala'
-apply plugin: 'info.gianlucacosta.aurora'
 apply plugin: 'application'
+apply plugin: 'info.gianlucacosta.moonlicense'
+apply plugin: 'info.gianlucacosta.moondeploy'
+apply plugin: 'info.gianlucacosta.aurora'
 
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '2.1'
+version '2.2'
 
 description = "Integrated development environment for the Chronos programming language"
 
@@ -55,41 +56,9 @@ mainClassName = 'info.gianlucacosta.chronos.ide.App'
 
 
 dependencies {
-    compile 'info.gianlucacosta.omnieditor:omnieditor:2.1'
-    compile 'info.gianlucacosta.chronos:chronos:2.1'
+    compile 'info.gianlucacosta.omnieditor:omnieditor:2.2'
+    compile 'info.gianlucacosta.chronos:chronos:3.0'
     compile 'org.scalafx:scalafx_2.11:8.0.60-R9'
-}
-
-
-
-aurora {
-    docTask = 'scaladoc'
-    gitHubUser = 'giancosta86'
-
-    author {
-        name = 'Gianluca Costa'
-        email = 'gianluca@gianlucacosta.info'
-        url = 'http://gianlucacosta.info/'
-    }
-
-    bintray {
-        user = project.bintrayUser
-        key = project.bintrayKey
-        repo = 'Hephaestus'
-        licenses = ['Apache-2.0']
-        labels = [
-                'Chronos',
-                'language',
-                'IDE',
-                'Integrated Development Environment',
-                'DES',
-                'GUI',
-                'discrete event simulation',
-                'editor',
-                'JavaFX',
-                'Java'
-        ]
-    }
 }
 
 
@@ -104,27 +73,19 @@ moonLicense {
 }
 
 
-processResources {
-    filesMatching('**/App.properties.xml') {
-        filter ReplaceTokens, tokens: [
-                'name'          : project.moonLicense.productInfo.productName,
-                'version'       : project.version,
-                'copyrightYears': project.moonLicense.getCopyrightYears(),
-                'license'       : project.moonLicense.license.name,
-                'url'           : project.url.toString(),
-                'facebookPage'  : project.facebookPage,
-                'release'       : project.auroraSettings.release.toString()
-        ]
+aurora {
+    gitHubUser = 'giancosta86'
+
+    author {
+        name = 'Gianluca Costa'
+        email = 'gianluca@gianlucacosta.info'
+        url = 'http://gianlucacosta.info/'
     }
-}
 
-
-startScripts {
-    def originalWindowsTemplateString = windowsStartScriptGenerator.template.asString()
-    def javawTemplateString =
-            originalWindowsTemplateString
-                    .replace("java.exe", "javaw.exe")
-                    .replace("\"%JAVA_EXE%\" %DEFAULT_JVM_OPTS%", "start \"\" /B \"%JAVA_EXE%\" %DEFAULT_JVM_OPTS%")
-    def javawTemplate = project.resources.text.fromString(javawTemplateString)
-    windowsStartScriptGenerator.template = javawTemplate
+    javaVersion {
+      major = 1
+      minor = 8
+      build = 0
+      update = 65
+    }
 }

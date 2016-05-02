@@ -23,7 +23,8 @@ package info.gianlucacosta.chronos.ide
 import java.io.File
 import java.net.URL
 
-import info.gianlucacosta.chronos.Language
+import info.gianlucacosta.chronos.{ArtifactInfo => Language}
+import info.gianlucacosta.chronos.chronos_ide.{ArtifactInfo => IdeInfo}
 import info.gianlucacosta.chronos.interpreter.Interpreter
 import info.gianlucacosta.chronos.parser.BasicAstBuilder
 import info.gianlucacosta.chronos.parser.exceptions.ParsingException
