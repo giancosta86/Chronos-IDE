@@ -30,7 +30,7 @@ buildscript {
     dependencies {
         classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.1'
         classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.2'
-        classpath 'info.gianlucacosta.aurora:aurora:4.3'
+        classpath 'info.gianlucacosta.aurora:aurora:4.4'
     }
 }
 
@@ -44,7 +44,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '2.2'
+version '2.3'
 
 description = "Integrated development environment for the Chronos programming language"
 
