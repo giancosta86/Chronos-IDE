@@ -20,6 +20,8 @@
 
 package info.gianlucacosta.chronos.ide
 
+import info.gianlucacosta.chronos.icons.MainIcon
+
 import scalafx.Includes._
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.Scene
@@ -45,7 +47,7 @@ class SplashStage extends Stage(StageStyle.UNDECORATED) {
 
       children = Seq(
         new ImageView {
-          image = new Image(App.getClass.getResourceAsStream("icons/mainIcon512.png"))
+          image = new Image(MainIcon.get(512))
         },
 
         new ProgressIndicator() {
@@ -57,7 +59,7 @@ class SplashStage extends Stage(StageStyle.UNDECORATED) {
   }
 
   icons.add(
-    new Image(App.getClass.getResourceAsStream("icons/mainIcon32.png"))
+    new Image(MainIcon.get(32))
   )
 
   sizeToScene()

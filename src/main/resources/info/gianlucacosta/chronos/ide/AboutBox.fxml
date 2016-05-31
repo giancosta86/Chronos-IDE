@@ -38,7 +38,7 @@
             <children>
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@icons/mainIcon128.png"/>
+                        <Image url="@/info/gianlucacosta/chronos/icons/mainIcon128.png"/>
                     </image>
                 </ImageView>
                 <Label fx:id="languageLabel" text="Language"/>

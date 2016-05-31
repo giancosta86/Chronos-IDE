@@ -23,6 +23,7 @@ package info.gianlucacosta.chronos.ide
 
 import javafx.stage.Stage
 
+import info.gianlucacosta.chronos.icons.MainIcon
 import info.gianlucacosta.omnieditor.OmniEditor
 
 import scalafx.application.Platform
@@ -39,10 +40,10 @@ class StartupThread(primaryStage: Stage) extends Thread {
       splashStage.show()
 
       primaryStage.getIcons.setAll(
-        new Image(getClass.getResourceAsStream("icons/mainIcon16.png")),
-        new Image(getClass.getResourceAsStream("icons/mainIcon32.png")),
-        new Image(getClass.getResourceAsStream("icons/mainIcon64.png")),
-        new Image(getClass.getResourceAsStream("icons/mainIcon128.png"))
+        new Image(MainIcon.get(16)),
+        new Image(MainIcon.get(32)),
+        new Image(MainIcon.get(64)),
+        new Image(MainIcon.get(128))
       )
     }
 
