@@ -60,7 +60,7 @@ dependencies {
 
     compile 'org.scala-lang:scala-library:2.11.7'
     compile 'info.gianlucacosta.omnieditor:omnieditor:2.3'
-    compile 'info.gianlucacosta.chronos:chronos:3.4'
+    compile 'info.gianlucacosta.chronos:chronos:3.5'
     compile 'org.scalafx:scalafx_2.11:8.0.60-R9'
 }
 
