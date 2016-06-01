@@ -30,7 +30,7 @@ buildscript {
     dependencies {
         classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.2'
         classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.3'
-        classpath 'info.gianlucacosta.aurora:aurora:5.3'
+        classpath 'info.gianlucacosta.aurora:aurora:5.4'
     }
 }
 
@@ -59,8 +59,8 @@ dependencies {
     generatedCompile 'org.scala-lang:scala-library:2.11.7'
 
     compile 'org.scala-lang:scala-library:2.11.7'
-    compile 'info.gianlucacosta.omnieditor:omnieditor:2.2'
-    compile 'info.gianlucacosta.chronos:chronos:3.3'
+    compile 'info.gianlucacosta.omnieditor:omnieditor:2.3'
+    compile 'info.gianlucacosta.chronos:chronos:3.4'
     compile 'org.scalafx:scalafx_2.11:8.0.60-R9'
 }
 
