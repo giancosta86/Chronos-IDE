@@ -30,7 +30,7 @@ buildscript {
     dependencies {
         classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.2'
         classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.3'
-        classpath 'info.gianlucacosta.aurora:aurora:5.4'
+        classpath 'info.gianlucacosta.aurora:aurora:5.5'
     }
 }
 
