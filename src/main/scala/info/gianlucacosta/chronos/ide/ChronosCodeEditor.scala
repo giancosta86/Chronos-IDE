@@ -112,6 +112,6 @@ class ChronosCodeEditor extends StyledCodeEditor {
   addTokens("function", functions: _*)
 
   getUndoManager.forgetHistory()
-  enableSmartNewline()
+  enableIndentedNewline()
   enableDynamicTabs(4)
 }

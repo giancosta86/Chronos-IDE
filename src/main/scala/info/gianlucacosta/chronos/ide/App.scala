@@ -20,18 +20,23 @@
 
 package info.gianlucacosta.chronos.ide
 
-import javafx.application.Application
 import javafx.stage.Stage
 
-object App {
-  def main(args: Array[String]): Unit = {
-    Application.launch(classOf[App], args: _*)
-  }
-}
+import info.gianlucacosta.chronos.chronos_ide.ArtifactInfo
+import info.gianlucacosta.chronos.icons.MainIcon
+import info.gianlucacosta.helios.apps.{AppInfo, AuroraAppInfo}
+import info.gianlucacosta.helios.fx.apps.{AppBase, AppMain, SplashStage}
+import info.gianlucacosta.omnieditor.OmniEditor
 
-class App extends Application {
-  override def start(primaryStage: Stage): Unit = {
-    val startupThread = new StartupThread(primaryStage)
-    startupThread.start()
+
+object App extends AppMain[App](classOf[App])
+
+class App extends AppBase(AuroraAppInfo(ArtifactInfo, MainIcon)) {
+  override def startup(appInfo: AppInfo, splashStage: SplashStage, primaryStage: Stage): Unit = {
+    splashStage.statusText = "Creating OmniEditor..."
+    val omniEditor = new OmniEditor(new IdeStrategy)
+
+    splashStage.statusText = "Starting OmniEditor..."
+    omniEditor.start(primaryStage)
   }
 }

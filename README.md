@@ -12,7 +12,7 @@
 
 ## Requirements
 
-Chronos IDE requires Java 8 update 65 or later compatible version.
+Chronos IDE requires Java 8 update 91 or later compatible version.
 
 
 ## Download and run

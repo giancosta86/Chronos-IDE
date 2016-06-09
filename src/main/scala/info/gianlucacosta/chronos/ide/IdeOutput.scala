@@ -22,10 +22,10 @@ package info.gianlucacosta.chronos.ide
 
 import info.gianlucacosta.chronos.interpreter.Output
 import info.gianlucacosta.chronos.interpreter.atoms.Atom
-import info.gianlucacosta.omnieditor.AtomicStringBuffer
+import info.gianlucacosta.helios.concurrency.AtomicStringBuilder
 
 
-class IdeOutput(outputBuffer: AtomicStringBuffer) extends Output {
+class IdeOutput(outputBuffer: AtomicStringBuilder) extends Output {
   override def print(atom: Atom): Unit = {
     outputBuffer.print(atom.toString)
   }

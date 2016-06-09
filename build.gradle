@@ -28,9 +28,9 @@ buildscript {
     }
 
     dependencies {
-        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.2'
-        classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.3'
-        classpath 'info.gianlucacosta.aurora:aurora:5.5'
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.3'
+        classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.4'
+        classpath 'info.gianlucacosta.aurora:aurora:6.0'
     }
 }
 
@@ -44,7 +44,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '2.4'
+version '3.0'
 
 description = "Integrated development environment for the Chronos programming language"
 
@@ -56,12 +56,12 @@ mainClassName = 'info.gianlucacosta.chronos.ide.App'
 
 
 dependencies {
-    generatedCompile 'org.scala-lang:scala-library:2.11.7'
+    generatedCompile 'org.scala-lang:scala-library:2.11.8'
 
-    compile 'org.scala-lang:scala-library:2.11.7'
-    compile 'info.gianlucacosta.omnieditor:omnieditor:2.3'
-    compile 'info.gianlucacosta.chronos:chronos:3.5'
-    compile 'org.scalafx:scalafx_2.11:8.0.60-R9'
+    compile 'org.scala-lang:scala-library:2.11.8'
+
+    compile 'info.gianlucacosta.omnieditor:omnieditor:3.0'
+    compile 'info.gianlucacosta.chronos:chronos:4.0'
 }
 
 
@@ -89,6 +89,6 @@ aurora {
       major = 1
       minor = 8
       build = 0
-      update = 65
+      update = 91
     }
 }
