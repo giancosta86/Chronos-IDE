@@ -86,9 +86,9 @@ aurora {
     }
 
     javaVersion {
-      major = 1
-      minor = 8
-      build = 0
-      update = 91
+        major = 1
+        minor = 8
+        build = 0
+        update = 91
     }
 }

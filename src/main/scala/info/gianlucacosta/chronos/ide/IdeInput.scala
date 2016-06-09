@@ -23,14 +23,13 @@ package info.gianlucacosta.chronos.ide
 
 import java.util.concurrent.atomic.{AtomicBoolean, AtomicReference}
 
+import info.gianlucacosta.chronos.chronos_ide.{ArtifactInfo => IdeInfo}
 import info.gianlucacosta.chronos.interpreter.atoms.{BooleanAtom, StringAtom}
 import info.gianlucacosta.chronos.interpreter.exceptions.FailedReadException
 import info.gianlucacosta.chronos.interpreter.io.BasicInput
 
 import scalafx.application.Platform
 import scalafx.scene.control.{Alert, ButtonBar, ButtonType, TextInputDialog}
-
-import info.gianlucacosta.chronos.chronos_ide.{ArtifactInfo => IdeInfo}
 
 
 class IdeInput extends BasicInput {

@@ -24,6 +24,7 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.layout.Pane
 
 import info.gianlucacosta.chronos.chronos_ide.{ArtifactInfo => IdeInfo}
+
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.control.{Alert, ButtonBar, ButtonType}
 
