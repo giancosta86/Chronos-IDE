@@ -4,7 +4,7 @@
 
 ## Introduction
 
-*Chronos IDE* is a user-friendly IDE (integrated development environment) for the [Chronos programming language](https://github.com/giancosta86/Chronos).
+*Chronos IDE* is a user-friendly IDE (integrated development environment) for the [Chronos programming language](https://github.com/giancosta86/Chronos), enabling you to run Chronos programs within a visual user interface.
 
 
 ![Screenshot](Screenshot.png)
@@ -29,7 +29,7 @@ In case of problems while starting up the application, please check your Java ve
 
 Chronos IDE is based on [OmniEditor](https://github.com/giancosta86/OmniEditor), a JavaFX library encapsulating a fully-functional, customizable IDE for programming languages.
 
-Chronos IDE also employs the [Chronos](https://github.com/giancosta86/Chronos) engine.
+Chronos IDE also employs the [Chronos](https://github.com/giancosta86/Chronos) engine and [Helios](https://github.com/giancosta86/Helios-core).
 
 All the *special thanks* mentioned in the related README files apply to Chronos IDE as well.
 
