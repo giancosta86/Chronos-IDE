@@ -44,7 +44,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '3.1'
+version '3.2'
 
 description = "Integrated development environment for the Chronos programming language"
 
@@ -60,7 +60,7 @@ dependencies {
 
     compile 'org.scala-lang:scala-library:2.11.8'
 
-    compile 'info.gianlucacosta.omnieditor:omnieditor:3.0'
+    compile 'info.gianlucacosta.omnieditor:omnieditor:4.0'
     compile 'info.gianlucacosta.chronos:chronos:4.0'
 }
 
