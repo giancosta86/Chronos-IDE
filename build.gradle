@@ -2,7 +2,7 @@
   ===========================================================================
   Chronos IDE
   ===========================================================================
-  Copyright (C) 2015-2016 Gianluca Costa
+  Copyright (C) 2015-2017 Gianluca Costa
   ===========================================================================
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ buildscript {
     dependencies {
         classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.3'
         classpath 'info.gianlucacosta.moondeploy:moondeploy-gradle:3.4'
-        classpath 'info.gianlucacosta.aurora:aurora:8.0'
+        classpath 'info.gianlucacosta.aurora:aurora:9.0'
     }
 }
 
@@ -44,7 +44,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group 'info.gianlucacosta.chronos'
 archivesBaseName = 'chronos-ide'
-version '3.4'
+version '3.5'
 
 description = "Integrated development environment for the Chronos programming language"
 
